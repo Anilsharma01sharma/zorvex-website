@@ -196,3 +196,22 @@ img{max-width:100%;display:block}
 .avatar{overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .team-grid{max-width:960px;margin:0 auto}
+
+/* Floating chat widget */
+.chat-widget{position:fixed;right:22px;bottom:22px;z-index:100;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.chat-options{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.chat-options[hidden]{display:none}
+.chat-btn,.chat-toggle{position:relative;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(14,21,37,.22);border:0;cursor:pointer;transition:transform .15s}
+.chat-btn:hover,.chat-toggle:hover{transform:scale(1.07)}
+.chat-btn svg{width:26px;height:26px}
+.chat-wa{background:#25D366}.chat-phone{background:#0BB07B}.chat-mail{background:#E8445A}.chat-slack{background:#4A154B}
+.chat-toggle{width:60px;height:60px;background:var(--blue)}
+.chat-toggle svg{width:28px;height:28px}
+.chat-toggle .ic-close{display:none}
+.chat-widget.open .chat-toggle .ic-open{display:none}
+.chat-widget.open .chat-toggle .ic-close{display:block}
+.chat-tip{position:absolute;right:66px;white-space:nowrap;background:#fff;color:var(--ink);font-size:14px;font-weight:600;padding:6px 12px;border-radius:8px;box-shadow:0 4px 14px rgba(14,21,37,.15);opacity:0;pointer-events:none;transition:opacity .15s}
+.chat-btn:hover .chat-tip,.chat-btn:focus-visible .chat-tip{opacity:1}
+.chat-widget.open .chat-options .chat-btn{animation:chatPop .2s ease both}
+@keyframes chatPop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.chat-widget.open .chat-options .chat-btn{animation:none}}
