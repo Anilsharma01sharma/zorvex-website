@@ -2,4 +2,4 @@
 
 Static site for GitHub Pages. Edit the HTML files directly; styles are in `assets/style.css`.
 
-Contact form: create a free form at formspree.io and replace `YOUR_FORM_ID` in `index.html`.
+Contact form submissions are emailed via FormSubmit.co (set the address in the form action).
