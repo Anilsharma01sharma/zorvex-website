@@ -305,3 +305,12 @@ img{max-width:100%;display:block}
 .member .member-bio{font-size:14px;line-height:1.55;color:var(--text);margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto}
 .avatar-initials{background:var(--blue);color:#fff;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:64px;letter-spacing:.02em}
 .stats strong,.result-card strong,.metric strong,.result-banner strong{font-variant-numeric:tabular-nums}
+
+/* Team bios on hover */
+.avatar{position:relative}
+.avatar.has-bio{cursor:pointer;outline:none}
+.member-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:22px;background:linear-gradient(to top,rgba(14,21,37,.94) 0%,rgba(14,21,37,.82) 55%,rgba(14,21,37,.15) 100%);opacity:0;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
+.member-overlay p{color:#fff;font-size:15px;line-height:1.55;text-align:left;margin:0}
+.avatar.has-bio:hover .member-overlay,.avatar.has-bio:focus .member-overlay,.avatar.has-bio:focus-within .member-overlay{opacity:1;transform:none}
+.avatar.has-bio:focus-visible{box-shadow:0 0 0 3px var(--blue)}
+@media (prefers-reduced-motion:reduce){.member-overlay{transition:none;transform:none}}
