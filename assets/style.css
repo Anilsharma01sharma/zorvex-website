@@ -197,26 +197,30 @@ img{max-width:100%;display:block}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .team-grid{max-width:960px;margin:0 auto}
 
-/* Floating chat widget */
+/* Certifications */
+.badge-row{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center}
+.badge-row li{background:#fff;border:1px solid var(--line);border-radius:16px;height:112px;width:200px;display:flex;align-items:center;justify-content:center;padding:16px;box-shadow:0 6px 18px rgba(14,21,37,.05)}
+.badge-row img{max-height:80px;max-width:100%;object-fit:contain}
+@media (max-width:760px){.badge-row li{width:calc(50% - 10px);height:96px}}
+
+/* Floating chat widget (matches anilsharma.co) */
 .chat-widget{position:fixed;right:22px;bottom:22px;z-index:100;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 .chat-options{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 .chat-options[hidden]{display:none}
-.chat-btn,.chat-toggle{position:relative;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(14,21,37,.22);border:0;cursor:pointer;transition:transform .15s}
+.chat-btn,.chat-toggle{position:relative;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.2);border:0;cursor:pointer;transition:transform .15s}
 .chat-btn:hover,.chat-toggle:hover{transform:scale(1.07)}
-.chat-btn svg{width:26px;height:26px}
-.chat-wa{background:#25D366}.chat-phone{background:#0BB07B}.chat-mail{background:#E8445A}.chat-slack{background:#4A154B}
-.chat-toggle{width:60px;height:60px;background:var(--blue)}
+.chat-btn svg{width:28px;height:28px}
+.chat-wa{background:#49E670}.chat-phone{background:#03E78B}.chat-mail{background:#FF485F}.chat-slack{background:#4A154B}
+.chat-toggle{background:#A886CD}
 .chat-toggle svg{width:28px;height:28px}
 .chat-toggle .ic-close{display:none}
 .chat-widget.open .chat-toggle .ic-open{display:none}
 .chat-widget.open .chat-toggle .ic-close{display:block}
-.chat-tip{position:absolute;right:66px;white-space:nowrap;background:#fff;color:var(--ink);font-size:14px;font-weight:600;padding:6px 12px;border-radius:8px;box-shadow:0 4px 14px rgba(14,21,37,.15);opacity:0;pointer-events:none;transition:opacity .15s}
-.chat-btn:hover .chat-tip,.chat-btn:focus-visible .chat-tip{opacity:1}
+.chat-tip{position:absolute;right:66px;white-space:nowrap;background:#fff;color:#333;font-size:14px;font-weight:500;padding:6px 12px;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.15);opacity:0;pointer-events:none;transition:opacity .15s}
+.chat-tip::after{content:"";position:absolute;right:-5px;top:50%;margin-top:-5px;border:5px solid transparent;border-right:0;border-left-color:#fff}
+.chat-btn:hover .chat-tip,.chat-btn:focus-visible .chat-tip,.chat-toggle:hover .chat-tip{opacity:1}
 .chat-widget.open .chat-options .chat-btn{animation:chatPop .2s ease both}
 @keyframes chatPop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.chat-widget.open .chat-options .chat-btn{animation:none}}
-
-/* Logo image */
-.logo img{display:block;height:52px;width:auto}
-.site-footer .logo img{height:48px}
-@media (max-width:760px){.logo img{height:38px}}
+.chat-tip-toggle{display:none}
+.chat-widget.open .chat-tip-toggle{display:block}
