@@ -215,3 +215,8 @@ img{max-width:100%;display:block}
 .chat-widget.open .chat-options .chat-btn{animation:chatPop .2s ease both}
 @keyframes chatPop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.chat-widget.open .chat-options .chat-btn{animation:none}}
+
+/* Logo image */
+.logo img{display:block;height:52px;width:auto}
+.site-footer .logo img{height:48px}
+@media (max-width:760px){.logo img{height:38px}}
