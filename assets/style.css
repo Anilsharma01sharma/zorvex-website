@@ -314,3 +314,4 @@ img{max-width:100%;display:block}
 .avatar.has-bio:hover .member-overlay,.avatar.has-bio:focus .member-overlay,.avatar.has-bio:focus-within .member-overlay{opacity:1;transform:none}
 .avatar.has-bio:focus-visible{box-shadow:0 0 0 3px var(--blue)}
 @media (prefers-reduced-motion:reduce){.member-overlay{transition:none;transform:none}}
+.form-error{background:#FEF2F2;color:#991B1B;border-radius:10px;padding:10px 12px;font-size:14px;margin:4px 0}
