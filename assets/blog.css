@@ -1,0 +1,36 @@
+/* Blog */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post-card{display:flex;flex-direction:column;padding:30px}
+.post-card h2,.post-card h3{margin:16px 0 10px;font-size:21px;line-height:1.3}
+.post-card h2 a,.post-card h3 a{color:var(--ink)}
+.post-card h2 a:hover,.post-card h3 a:hover{color:var(--blue)}
+.post-card p{color:var(--muted);font-size:15.5px}
+.post-card .card-link{margin-top:auto;padding-top:18px}
+.post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:14px;color:var(--muted)}
+.post-tag{background:var(--blue-soft);color:var(--blue);font-weight:600;font-size:13px;padding:4px 12px;border-radius:999px}
+.blog-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.filter-chip{font:inherit;font-weight:600;font-size:15px;padding:9px 18px;border-radius:999px;border:1px solid #CCD5E6;background:#fff;color:var(--ink);cursor:pointer}
+.filter-chip:hover{border-color:var(--ink)}
+.filter-chip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.post-card[hidden]{display:none}
+.post-hero .post-meta{margin-bottom:18px}
+.post-hero h1{font-size:clamp(32px,4.2vw,50px)}
+.byline{margin-top:20px;font-size:15px;color:var(--muted);font-weight:500}
+.prose{max-width:760px;margin:0 auto;font-size:18px;line-height:1.75;color:var(--text)}
+.prose > * + *{margin-top:20px}
+.prose h2{font-size:clamp(24px,2.6vw,30px);font-weight:800;margin-top:48px}
+.prose h3{font-size:21px;margin-top:32px}
+.prose ul{padding-left:0;list-style:none}
+.prose li{position:relative;padding:5px 0 5px 30px}
+.prose li::before{content:"";position:absolute;left:2px;top:16px;width:14px;height:8px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+.prose a{text-decoration:underline;text-underline-offset:3px}
+.prose strong{color:var(--ink)}
+.prose code{font-size:.88em;background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.post-sources{margin-top:56px;padding:28px 30px;background:var(--bg-soft);border-radius:var(--radius);font-size:15.5px}
+.post-sources h2{font-size:20px;margin:0 0 8px}
+.post-sources li{padding:4px 0 4px 26px}
+.post-sources li::before{top:13px;width:12px;height:7px}
+.post-back{margin-top:36px}
+.post-back a{text-decoration:none;font-weight:600}
+@media (max-width:960px){.post-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.post-grid{grid-template-columns:1fr}.prose{font-size:17px}}
