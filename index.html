@@ -87,12 +87,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="hero-card" aria-label="Example client results">
       <p class="label">Recent client results</p>
-      <div class="metric-grid">
-        <div class="metric"><strong>+420%</strong><span>E-commerce sales in 7 months</span></div>
-        <div class="metric"><strong>+260%</strong><span>Organic traffic, year on year</span></div>
-        <div class="metric"><strong>5.8x</strong><span>ROAS on Meta retargeting</span></div>
+      <div class="metric-grid" role="tablist" aria-label="Choose a result to chart">
+        <button class="metric is-active" type="button" role="tab" aria-selected="true" data-series="sales"><strong>+420%</strong><span>E-commerce sales in 7 months</span></button>
+        <button class="metric" type="button" role="tab" aria-selected="false" data-series="traffic"><strong>+260%</strong><span>Organic traffic, year on year</span></button>
+        <button class="metric" type="button" role="tab" aria-selected="false" data-series="roas"><strong>5.8x</strong><span>ROAS on Meta retargeting</span></button>
       </div>
-      <svg viewBox="0 0 400 150" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1F4FE0" stop-opacity=".18"/><stop offset="1" stop-color="#1F4FE0" stop-opacity="0"/></linearGradient></defs><path d="M0 130 L50 120 L100 122 L150 98 L200 88 L250 66 L300 52 L350 32 L400 14 L400 150 L0 150Z" fill="url(#g)"/><polyline fill="none" stroke="#1F4FE0" stroke-width="3" points="0,130 50,120 100,122 150,98 200,88 250,66 300,52 350,32 400,14"/></svg>
+      <div class="growth-chart" aria-live="polite">
+        <div class="gc-head"><span class="gc-title">E-commerce sales</span><span class="gc-legend"><i class="gc-key now"></i><span class="gc-now-label">With us</span><i class="gc-key was"></i><span class="gc-was-label">Before</span></span></div>
+        <svg class="gc-svg" viewBox="0 0 400 180" role="img" aria-label="Growth trend chart"><defs><linearGradient id="gcFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1F4FE0" stop-opacity=".22"/><stop offset="1" stop-color="#1F4FE0" stop-opacity="0"/></linearGradient><linearGradient id="gcStroke" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#7C9BF2"/><stop offset="1" stop-color="#1F4FE0"/></linearGradient><filter id="gcGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs><path d="M0 150 C80 140 120 138 160 118 S260 80 300 60 S370 26 400 18 L400 170 L0 170Z" fill="url(#gcFill)"/><path d="M0 150 C80 140 120 138 160 118 S260 80 300 60 S370 26 400 18" fill="none" stroke="#1F4FE0" stroke-width="3" stroke-linecap="round"/></svg>
+        <p class="gc-foot">Indexed trend, simplified · tap a result to switch</p>
+      </div>
     </div>
   </div>
 </section>
@@ -320,7 +324,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="chat-tip chat-tip-toggle">Hide</span><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
 </div>
-<script src="/assets/main.js?v=6"></script>
+<script src="/assets/main.js?v=7"></script>
 <script src="/assets/spam-guard.js?v=1" defer></script>
 </body>
 </html>
