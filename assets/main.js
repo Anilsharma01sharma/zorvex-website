@@ -135,3 +135,15 @@ if (chatToggle && chatWidget && chatOptions) {
   const start=()=>{pick('sales');if(!reduce)timer=setInterval(()=>pick(order[(order.indexOf(cur)+1)%3]),6000);};
   if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){start();io.disconnect();}},{threshold:.3});io.observe(box);}else start();
 })();
+
+
+// Client results: "View more" toggle and sparkline draw-in
+(function(){
+  const sec=document.getElementById('clients'),grid=document.getElementById('client-results'),btn=document.getElementById('more-results');
+  if(!sec||!grid)return;sec.classList.add('rc-js');
+  if(btn)btn.addEventListener('click',()=>{const open=grid.classList.toggle('open');btn.setAttribute('aria-expanded',open);btn.textContent=open?'Show fewer results':'View more results';if(open)grid.querySelectorAll('.rc').forEach(c=>c.classList.add('in'));});
+  const cards=grid.querySelectorAll('.rc');
+  if(!('IntersectionObserver' in window)){cards.forEach(c=>c.classList.add('in'));return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.35});
+  cards.forEach(c=>io.observe(c));
+})();

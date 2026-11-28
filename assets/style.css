@@ -337,3 +337,35 @@ button.metric.is-active{background:#fff;border-color:var(--blue);box-shadow:0 10
 .avatar.has-bio:focus-visible{box-shadow:0 0 0 3px var(--blue)}
 @media (prefers-reduced-motion:reduce){.member-overlay{transition:none;transform:none}}
 .form-error{background:#FEF2F2;color:#991B1B;border-radius:10px;padding:10px 12px;font-size:14px;margin:4px 0}
+
+/* Client results cards (matches Uniq Web Infotech layout) */
+.rc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rc{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s}
+.rc:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,79,224,.10)}
+.rc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+.rc-chip{background:var(--blue-soft);color:var(--blue);font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.rc .spark{display:block;flex-shrink:0}
+.rc h3{font-size:21px;margin:0}
+.rc-metric{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:27px;line-height:1.1;color:#0E1525;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rc-services{font-weight:700;font-size:14px;color:var(--blue)}
+.rc p{color:var(--muted);margin:0;font-size:15px}
+.rc-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
+.rc-local{text-align:center;margin-top:56px}
+.rc-local h3{font-size:24px;margin-bottom:8px}
+.rc-local>p{color:var(--muted)}
+.rc-names{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+.rc-names span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;color:#26324A}
+.rc-names .rc-more{background:var(--blue-soft);border-color:transparent;color:var(--blue)}
+.rc-js .rc-grid>.rc:nth-child(n+7){display:none}
+.rc-js .rc-grid.open>.rc{display:flex}
+.rc-js .spark polyline{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s ease-out}
+.rc-js .spark circle{opacity:0;transition:opacity .4s ease 1.4s}
+.rc-js .spark path{opacity:0;transition:opacity 1s ease .4s}
+.rc-js .spark rect{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.rc-js .rc.in .spark polyline{stroke-dashoffset:0}
+.rc-js .rc.in .spark circle,.rc-js .rc.in .spark path{opacity:1}
+.rc-js .rc.in .spark rect{transform:scaleY(1)}
+@media (max-width:980px){.rc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rc-grid{grid-template-columns:1fr}.rc-js .rc-grid>.rc:nth-child(n+4){display:none}.rc-js .rc-grid.open>.rc{display:flex}}
+@media (max-width:420px){.rc-metric{white-space:normal;font-size:25px}.rc-top{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){.rc-js .spark *{transition:none!important;opacity:1!important;stroke-dashoffset:0!important;transform:none!important}}
